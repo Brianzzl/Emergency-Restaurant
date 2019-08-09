@@ -89,6 +89,25 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="./assets/js/materialize.js"></script>
   <script src="./assets/js/init.js"></script>
+  <script type="text/javascript">
 
+$("#tables_btn").on("click", function() {
+
+
+
+      $.get("/api/tables" , function(data) {
+        console.log(data);
+        for(var i=0;i<data.length;i++){
+          $("#table-ol").append(`<li>${data[i].name}</li>`);
+        }
+
+        // for(var i=0;i<data.length;i++){
+        //   `<li>data[i].name</li>`
+        // }
+
+      });
+    });
+
+  </script>
   </body>
 </html>
